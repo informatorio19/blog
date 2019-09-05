@@ -30,7 +30,7 @@
                                     <td>{{$post->id}}</td>
                                     <td>{{$post->titulo}}</td>
                                     <td>
-                                        <img src="{{$post->foto}}" alt="">
+                                        <img src="{{$post->foto}}" alt="" style="width:100px">
                                     </td>
                                 </tr>
 
