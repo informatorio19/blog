@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.dashboard')
 
 @section('content')
 
@@ -39,6 +39,52 @@
                       </table>
                   </div>
               </div>
+          </div>
+      </div>
+
+      <div class="row">
+          <div class="col-md-8">
+            <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
+                @csrf
+                <div class="form-group">
+                    <label for="">Titulo</label>
+                    <input type="text"
+                        class="form-control @error('titulo') is-invalid @enderror"
+                        name="titulo"
+                        value="{{ old('titulo') }}">
+                    @error('titulo')
+                        <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                </div>
+                <div class="form-group">
+                    <label for="">Descripcion</label>
+                    <input type="text" class="form-control @error('descripcion') is-invalid @enderror" name="descripcion">
+                </div>
+                    @error('descripcion')
+                    <div class="alert alert-danger">{{ $message }}</div>
+                    @enderror
+                <div class="form-group">
+                    <label for="">Contenido</label>
+                    <textarea type="text" class="form-control" name="contenido">
+                    </textarea>
+                    <div class="form-group">
+                        <label for="">Foto</label>
+                        <input type="file" class="form-control" name="foto">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="">Categorias</label>
+                        <select name="categorias[]" id="" class="form-control" multiple>
+                            @foreach ($categorias as $categoria)
+                            <option value="{{$categoria->id}}">{{$categoria->nombre}}</option>
+
+                            @endforeach
+                        </select>
+                    </div>
+
+                </div>
+                <button type="submit" class="btn btn-primary">Guardar</button>
+            </form>
           </div>
       </div>
 
