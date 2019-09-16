@@ -14,7 +14,7 @@
                         </div>
                     @endif
 
-                   <example-component></example-component>
+                    <cuadro-buscar></cuadro-buscar>
                 </div>
             </div>
         </div>

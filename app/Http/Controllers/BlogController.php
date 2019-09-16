@@ -19,4 +19,8 @@ class BlogController extends Controller
     public function show(){
         return view('blog.post');
     }
+
+    public function listar($post){
+        return Post::where('titulo','LIKE','%'.$post.'%')->get();
+    }
 }

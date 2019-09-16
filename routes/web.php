@@ -24,3 +24,5 @@ Route::resource('blogs', 'BlogController');
 
 
 Route::get('post','BlogController@show')->name('blog.post');
+
+Route::get('lista/{post}','BlogController@listar')->name('lista');
