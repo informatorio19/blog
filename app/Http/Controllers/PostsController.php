@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class PostsController extends Controller
 {
+
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +32,8 @@ class PostsController extends Controller
      */
     public function create()
     {
-        //
+        $categorias = Categoria::all();
+        return view('posts.create',compact('categorias'));
     }
 
     /**

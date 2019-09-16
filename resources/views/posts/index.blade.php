@@ -8,9 +8,12 @@
               <div class="card">
                   <div class="card-header">
                       <h2>Lista de Posts</h2>
+                        @role('superadmin')
                         <button class="btn btn-success" type="button" data-toggle="modal" data-target="#post">
                           Nuevo Post
                         </button>
+                        @endrole
+
                   </div>
                   <div class="card-body">
 
@@ -42,6 +45,7 @@
           </div>
       </div>
 
+      @hasanyrole('superadmin|admin')
       <div class="row">
           <div class="col-md-8">
             <form action="{{route('posts.store')}}" method="POST" enctype="multipart/form-data">
@@ -87,7 +91,7 @@
             </form>
           </div>
       </div>
-
+      @endrole
       <div class="row">
           <div class="modal fade" id="post" tabindex="-1" role="dialog" aria-hidden="true">
             <div class="modal-dialog" role="document">

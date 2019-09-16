@@ -14,9 +14,8 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 
-Route::resource('categorias', 'PostsController');
+Route::resource('categorias', 'CategoriasController');
 
-Route::resource('posts', 'PostsController');
 
 Route::resource('blogs', 'BlogController');
 
@@ -26,3 +25,12 @@ Route::resource('blogs', 'BlogController');
 Route::get('post','BlogController@show')->name('blog.post');
 
 Route::get('lista/{post}','BlogController@listar')->name('lista');
+
+Route::group(['middleware' => ['role:superadmin']], function () {
+    Route::resource('posts', 'PostsController');
+
+
+});
+
+
+
