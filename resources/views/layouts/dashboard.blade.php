@@ -71,7 +71,7 @@
       </div>
     </div>
   </div>
-
+  <script src="https://cdn.ckeditor.com/4.12.1/standard/ckeditor.js"></script>
   <!-- Bootstrap core JavaScript-->
   <script src="{{asset('dashboard/vendor/jquery/jquery.min.js')}}"></script>
   <script src="{{asset('dashboard/vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
@@ -91,6 +91,9 @@
   <script src="{{asset('dashboard/js/demo/datatables-demo.js')}}"></script>
   <script src="{{asset('dashboard/js/demo/chart-area-demo.js')}}"></script>
 
+  <script>
+        CKEDITOR.replace( 'contenido' );
+</script>
 </body>
 
 </html>

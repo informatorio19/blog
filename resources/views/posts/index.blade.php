@@ -111,7 +111,7 @@
 
                             <div class="form-group">
                                 <label for="">Contenido</label>
-                                <textarea type="text" class="form-control" name="contenido">
+                                <textarea type="text" class="form-control" name="contenido" >
                                 </textarea>
                                 <div class="form-group">
                                     <label for="">Foto</label>
